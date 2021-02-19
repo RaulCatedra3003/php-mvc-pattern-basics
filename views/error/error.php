@@ -1,1 +1,8 @@
-<!-- This is the error view that you should show when the request was wrong -->
+<?php
+
+if (isset($errorMsg)) {
+  echo "<p>$errorMsg</p>";
+  echo "<br>";
+  echo "<br>";
+  echo "<a href='index.php'>Back to main</a>";
+}

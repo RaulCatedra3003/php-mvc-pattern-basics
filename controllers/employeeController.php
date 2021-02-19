@@ -7,6 +7,18 @@ require_once MODELS . "employeeModel.php";
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
+if (isset($_REQUEST['action'])) {
+  if (function_exists($_REQUEST['action'])) {
+    call_user_func($_REQUEST['action']);
+  } else {
+    $errorMsg = "this action does not exist";
+    error($errorMsg);
+  }
+} else {
+  $errorMsg = "there is not action defined";
+  error($errorMsg);
+}
+
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -15,7 +27,7 @@ require_once MODELS . "employeeModel.php";
  */
 function getAllEmployees()
 {
-    //
+  //
 }
 
 /**
@@ -23,7 +35,7 @@ function getAllEmployees()
  */
 function getEmployee($request)
 {
-    //
+  //
 }
 
 /**
@@ -31,5 +43,5 @@ function getEmployee($request)
  */
 function error($errorMsg)
 {
-    require_once VIEWS . "/error/error.php";
+  require_once VIEWS . "/error/error.php";
 }

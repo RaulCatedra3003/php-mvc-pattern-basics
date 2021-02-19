@@ -1,1 +1,6 @@
-<!-- This is the main generic view of your application, it's not required to use it -->
+<?php
+
+echo "<a href='index.php?controller=employee'>Employees</a>";
+echo "<br>";
+echo "<br>";
+echo "<a href='index.php?controller=travel'>Travels</a>";
