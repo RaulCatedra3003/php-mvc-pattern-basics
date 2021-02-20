@@ -38,7 +38,7 @@
         echo "</tr>";
       }
     } else {
-      echo "no hay employees";
+      error("A problem with database ocurred");
     }
     ?>
   </table>
