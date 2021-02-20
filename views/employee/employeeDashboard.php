@@ -42,6 +42,7 @@
     }
     ?>
   </table>
+  <a href="index.php">Back</a>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
 <body>
   <main class="main">
     <a class="button" href='index.php?controller=employee&action=getAllEmployees'>Employees</a>
-    <a class="button" href='index.php?controller=travel$action=getAllTravels'>Travels</a>
+    <a class="button" href='index.php?controller=travel&action=getAllTravels'>Travels</a>
   </main>
 </body>
 
