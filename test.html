@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee</title><!-- TODO: create the employee name dinamically -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <form action="" class="form">
+    <form action="" class="form">
         <label class="form__label" for="firstName">First Name</label>
         <input class="form__input" type="text" name="name" id="firstName">
 
@@ -26,8 +24,8 @@
             <option value="">No-binary</option>
         </select>
 
-        <label class="form__label" for="streetAddress">Street Address</label>
-        <input class="form__input" type="text" name="streetAddress" >
+        <label class="form__label" for="streetAdress">Street adress</label>
+        <input class="form__input" type="text" name="streetAdress" >
 
         <label class="form__label" for="state">State</label>
         <input class="form__input" type="text" name="state" id="state" >
@@ -44,6 +42,11 @@
         <label class="form__label" for="phoneNumber">Phone Number</label>
         <input class="form__input" type="number" name="phoneNumber" id="phoneNumber" max="9">
     </form>
-</body>
 
+
+    <main class="main">
+        <a href='index.php?controller=employee&action=getAllEmployees'>Employees</a>
+        <a href='index.php?controller=travel$action=getAllTravels'>Travels</a>
+    </main>
+</body>
 </html>
