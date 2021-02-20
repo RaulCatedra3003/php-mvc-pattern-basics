@@ -1,1 +1,1 @@
-console.log('linked properly'); 
+console.log('linked properly');

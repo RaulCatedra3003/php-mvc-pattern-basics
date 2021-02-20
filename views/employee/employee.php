@@ -9,41 +9,50 @@
 </head>
 
 <body>
-  <form action="" class="form">
-        <label class="form__label" for="firstName">First Name</label>
-        <input class="form__input" type="text" name="name" id="firstName">
+  <form action="#" class="form">
+    <img src="<?= isset($employee) ? $employee['avatar'] : "../assets/images/no-user.png" ?>" class="img_profile" alt="avatar">
+    <h4 class="form__title"><?= isset($employee) ? $employee['name'] . "'s profile" : "New employee" ?></h4>
 
-        <label class="form__label" for="lastName">Last Name</label>
-        <input class="form__input" type="text" name="lastName" id="lastName" >
+    <section class="form-section">
+      <input class="form-section__input" type="text" name="name" id="firstName" value="<?= isset($employee) ? $employee['name'] : '' ?>">
+      <label class="form-section__label" for="firstName">First Name</label>
+      <label class="form-section__label" for="lastName">Last Name</label>
+      <input class="form-section__input" type="text" name="lastName" id="lastName" value="<?= isset($employee) ? $employee['lastName'] : '' ?>">
+    </section>
 
-        <label class="form__label" for="email">e-mail</label>
-        <input class="form__input" type="email" name="email" id="email">
+    <section class="form-section">
+      <label class="form-section__label" for="email">e-mail</label>
+      <input class="form-section__input" type="email" name="email" id="email" value="<?= isset($employee) ? $employee['email'] : '' ?>">
+      <label class="form-section__select" for="gender">First Name</label>
+      <select name="gender" id="gender" class="form-section__input">
+        <option value="woman" <?= isset($employee) ? ($employee['gender'] == "woman" ? "selected" : "") : '' ?>>Women</option>
+        <option value="man" <?= isset($employee) ? ($employee['gender'] == "man" ? "selected" : "") : '' ?>>Man</option>
+        <option value="nobinary" <?= isset($employee) ? ($employee['gender'] == "nobinary" ? "selected" : "") : '' ?>>No-binary</option>
+      </select>
+    </section>
 
-        <label class="form__select" for="gender">First Name</label>
-        <select name="gender" id="gender">
-            <option value="">Women</option>
-            <option value="">Man</option>
-            <option value="">No-binary</option>
-        </select>
+    <section class="form-section">
+      <label class="form-section__label" for="streetAddress">Street Address</label>
+      <input class="form-section__input" type="text" name="streetAddress" value="<?= isset($employee) ? $employee['streetAddress'] : '' ?>">
+      <label class="form-section__label" for="state">State</label>
+      <input class="form-section__input" type="text" name="state" id="state" value="<?= isset($employee) ? $employee['state'] : '' ?>">
+    </section>
 
-        <label class="form__label" for="streetAddress">Street Address</label>
-        <input class="form__input" type="text" name="streetAddress" >
+    <section class="form-section">
+      <label class="form-section__label" for="city">City</label>
+      <input class="form-section__input" type="text" name="city" id="city" value="<?= isset($employee) ? $employee['city'] : '' ?>">
+      <label class="form-section__label" for="age">Age</label>
+      <input class="form-section__input" type="number" name="age" id="age" max="99" min="1" value="<?= isset($employee) ? $employee['age'] : '' ?>">
+    </section>
 
-        <label class="form__label" for="state">State</label>
-        <input class="form__input" type="text" name="state" id="state" >
-
-        <label class="form__label" for="city">City</label>
-        <input class="form__input" type="text" name="city" id="city">
-        
-        <label class="form__label" for="age">Age</label>
-        <input class="form__input" type="number" name="age" id="age" max="99" min="1">
-
-        <label class="form__label" for="postalCode">Postal Code </label>
-        <input class="form__input" type="number" name="PC" id="postalCode" pattern="[0-9]{6}">
-
-        <label class="form__label" for="phoneNumber">Phone Number</label>
-        <input class="form__input" type="number" name="phoneNumber" id="phoneNumber" >
-    </form>
+    <section class="form-section">
+      <label class="form-section__label" for="postalCode">Postal Code </label>
+      <input class="form-section__input" type="number" name="PC" id="postalCode" pattern="[0-9]{6}" value="<?= isset($employee) ? $employee['PC'] : '' ?>">
+      <label class="form-section__label" for="phoneNumber">Phone Number</label>
+      <input class="form-section__input" type="number" name="phoneNumber" id="phoneNumber" value="<?= isset($employee) ? $employee['phoneNumber'] : '' ?>">
+    </section>
+  </form>
+  <a href="index.php?controller=employee&action=getAllEmployees" class="button">Back</a>
 </body>
 
 </html>
