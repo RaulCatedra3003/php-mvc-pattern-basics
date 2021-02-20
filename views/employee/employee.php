@@ -39,10 +39,10 @@
         <input class="form__input" type="number" name="age" id="age" max="99" min="1">
 
         <label class="form__label" for="postalCode">Postal Code </label>
-        <input class="form__input" type="number" name="PC" id="postalCode" pattern="[0-9]{5}">
+        <input class="form__input" type="number" name="PC" id="postalCode" pattern="[0-9]{6}">
 
         <label class="form__label" for="phoneNumber">Phone Number</label>
-        <input class="form__input" type="number" name="phoneNumber" id="phoneNumber" max="9">
+        <input class="form__input" type="number" name="phoneNumber" id="phoneNumber" >
     </form>
 </body>
 
