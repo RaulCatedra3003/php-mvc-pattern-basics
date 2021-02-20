@@ -1,8 +1,8 @@
 <?php
 
 define("BASE_PATH", dirname(__FILE__));
-include_once "config/constants.php";
-include_once "helpers/helpers.php";
+require_once "config/constants.php";
+require_once "helpers/helpers.php";
 
 if (isset($_REQUEST['controller'])) {
   file_exists(CONTROLLERS . $_REQUEST['controller'] . "Controller.php") ?
