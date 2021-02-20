@@ -45,7 +45,7 @@ function createEmployee()
   require_once MODELS . "employeeModel.php";
 }
 
-function updateEmployee()
+function updateEmployee($request)
 {
   require_once MODELS . "employeeModel.php";
 }
