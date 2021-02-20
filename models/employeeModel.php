@@ -29,3 +29,13 @@ function getById($id)
     }
   }
 }
+
+function newItem()
+{
+  return "new";
+}
+
+function updateById($id)
+{
+  return "update";
+}
