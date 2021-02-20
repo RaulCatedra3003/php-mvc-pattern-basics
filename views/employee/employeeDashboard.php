@@ -42,6 +42,7 @@
     }
     ?>
   </table>
+  <a href="index.php?controller=employee&action=newEmployee">New employee</a>
   <a href="index.php">Back</a>
 </body>
 

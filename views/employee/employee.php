@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <form action="#" class="form">
+  <form action='<?= isset($employee) ? "index.php?controller=employee&action=updateEmployee&id=$employee[id]" : "index.php?controller=employee&action=createEmployee" ?>' class="form">
     <img src="<?= isset($employee) ? $employee['avatar'] : "../assets/images/no-user.png" ?>" class="img_profile" alt="avatar">
     <h4 class="form__title"><?= isset($employee) ? $employee['name'] . "'s profile" : "New employee" ?></h4>
+    <?= isset($employee) ? "<input type='hidden' name='id' value='$employee[id]'>" : "" ?>
 
     <section class="form-section">
       <input class="form-section__input" type="text" name="name" id="firstName" value="<?= isset($employee) ? $employee['name'] : '' ?>">
@@ -51,8 +52,10 @@
       <label class="form-section__label" for="phoneNumber">Phone Number</label>
       <input class="form-section__input" type="number" name="phoneNumber" id="phoneNumber" value="<?= isset($employee) ? $employee['phoneNumber'] : '' ?>">
     </section>
+
+    <input type="submit" class="submit" value="Submit">
+    <a href="index.php?controller=employee&action=getAllEmployees" class="button">Back</a>
   </form>
-  <a href="index.php?controller=employee&action=getAllEmployees" class="button">Back</a>
 </body>
 
 </html>

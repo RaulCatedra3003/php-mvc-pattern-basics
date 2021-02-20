@@ -34,3 +34,18 @@ function getEmployee($request)
     error("You need parameters to run this action");
   }
 }
+
+function newEmployee()
+{
+  require_once "./views/employee/employee.php";
+}
+
+function createEmployee()
+{
+  require_once MODELS . "employeeModel.php";
+}
+
+function updateEmployee()
+{
+  require_once MODELS . "employeeModel.php";
+}
