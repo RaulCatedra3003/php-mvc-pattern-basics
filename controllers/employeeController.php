@@ -24,5 +24,7 @@ function getEmployee($request)
     $employee = getById($request['id']) ?
       require_once "../views/employee/employee.php" :
       error("A problem with database ocurred");
+  } else {
+    error("You need parameters to run this action");
   }
 }
