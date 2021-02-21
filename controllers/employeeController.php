@@ -43,8 +43,7 @@ function newEmployee()
 function createEmployee($request)
 {
   require_once MODELS . "employeeModel.php";
-  if (newItem($request)) {
-    $message = newItem($request);
+  if ($message = newItem($request)) {
     $employees = get();
     require_once "./views/employee/employeeDashboard.php";
   } else {
@@ -56,8 +55,7 @@ function updateEmployee($request)
 {
   require_once MODELS . "employeeModel.php";
   if (isset($request['id'])) {
-    if (updateById($request)) {
-      $message = updateById($request);
+    if ($message = updateById($request)) {
       $employees = get();
       require_once "./views/employee/employeeDashboard.php";
     } else {
@@ -72,8 +70,7 @@ function deleteEmployee($request)
 {
   require_once MODELS . "employeeModel.php";
   if (isset($request['id'])) {
-    if (deleteById($request['id'])) {
-      $message = deleteById($request['id']);
+    if ($message = deleteById($request['id'])) {
       $employees = get();
       require_once "./views/employee/employeeDashboard.php";
     }
