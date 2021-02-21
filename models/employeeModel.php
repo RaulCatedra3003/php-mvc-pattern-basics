@@ -8,8 +8,12 @@ function get()
     return false;
   } else {
     $response = mysqli_query($dataBase, 'SELECT * FROM employees');
-    $data = mysqli_fetch_all($response);
-    return $data;
+    if ($response) {
+      $data = mysqli_fetch_all($response);
+      return $data;
+    } else {
+      return false;
+    }
   }
 }
 
@@ -30,12 +34,17 @@ function getById($id)
   }
 }
 
-function newItem()
+function newItem($request)
 {
   return "new";
 }
 
-function updateById($id)
+function updateById($request)
 {
   return "update";
+}
+
+function deleteById($id)
+{
+  return "delete";
 }
