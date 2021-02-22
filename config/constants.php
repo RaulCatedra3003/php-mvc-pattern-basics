@@ -1,4 +1,6 @@
 <?php
+$dataBase = mysqli_connect(HOST, USER_NAME, PASSWORD, DB_NAME);
+
 
 
 define("CONTROLLERS", BASE_PATH . '/controllers/');
@@ -9,4 +11,3 @@ define("MODELS", BASE_PATH . '/models/');
 
 define("RESOURCES", BASE_PATH . '/resources/');
 
-$dataBase = mysqli_connect(HOST, USER_NAME, PASSWORD, DB_NAME);

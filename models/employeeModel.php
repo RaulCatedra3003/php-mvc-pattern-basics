@@ -1,5 +1,9 @@
 <?php
 
+
+require_once "config/constants.php";
+
+
 function get()
 {
   try {

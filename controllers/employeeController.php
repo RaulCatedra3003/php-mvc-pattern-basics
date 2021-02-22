@@ -44,8 +44,7 @@ function createEmployee($request)
 {
   require_once MODELS . "employeeModel.php";
   if ($message = newItem($request)) {
-    $employees = get();
-    require_once "./views/employee/employeeDashboard.php";
+    header("Location:index.php?controller=employee&action=getAllEmployees&message=$message");
   } else {
     error("A problem with database ocurred");
   }
@@ -56,8 +55,7 @@ function updateEmployee($request)
   require_once MODELS . "employeeModel.php";
   if (isset($request['id'])) {
     if ($message = updateById($request)) {
-      $employees = get();
-      require_once "./views/employee/employeeDashboard.php";
+      header("Location:index.php?controller=employee&action=getAllEmployees&message=$message");
     } else {
       error("A problem with database ocurred");
     }
@@ -71,8 +69,7 @@ function deleteEmployee($request)
   require_once MODELS . "employeeModel.php";
   if (isset($request['id'])) {
     if ($message = deleteById($request['id'])) {
-      $employees = get();
-      require_once "./views/employee/employeeDashboard.php";
+      header("Location:index.php?controller=employee&action=getAllEmployees&message=$message");
     }
   }
 }

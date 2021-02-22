@@ -8,6 +8,8 @@ require_once "config/dbConstants.php";
 require_once "config/constants.php";
 require_once "helpers/helpers.php";
 
+
+
 if (isset($_REQUEST['controller'])) {
   file_exists(CONTROLLERS . $_REQUEST['controller'] . "Controller.php") ?
     require_once(CONTROLLERS . $_REQUEST['controller'] . "Controller.php") :

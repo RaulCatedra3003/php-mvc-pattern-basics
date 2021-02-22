@@ -1,3 +1,8 @@
+<?php
+  if (isset($_REQUEST['message'])) {
+    $message = $_REQUEST['message'];
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
