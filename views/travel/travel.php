@@ -36,7 +36,7 @@
     <select name="city_id" id="city_id" required>
       <?php
       foreach ($cities as $city) {
-        if (isset($travel)) {
+        if (isset($travel)) {/* TODO: refactorice with concatenation */
           if ($city[0] == $travel['city_id']) {
             echo "<option value='$city[0]' selected  >$city[1] </option>";
           } else {
