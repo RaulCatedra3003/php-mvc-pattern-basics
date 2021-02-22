@@ -1,7 +1,7 @@
 <?php
-  if (isset($_REQUEST['message'])) {
-    $message = $_REQUEST['message'];
-  }
+if (isset($_REQUEST['message'])) {
+  $message = $_REQUEST['message'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,14 +24,14 @@
     </tr>
     <?php
     if (isset($travels)) {
-        foreach ($travels as $travel) {
-            echo "<tr>";
-            echo "<td>$travel[0]</td>";
-            echo "<td>$travel[1]</td>";
-            echo "<td>$travel[2]</td>";
-            echo "<td><a  href='index.php?controller=travel&action=getTravel&id=$travel[3]' class='button'>Show</a><a  href='index.php?controller=travel&action=deleteTravel&id=$travel[3]' class='button'>Delete</a></td>";
-            echo "</tr>";
-        }
+      foreach ($travels as $travel) {
+        echo "<tr>";
+        echo "<td>$travel[0]</td>";
+        echo "<td>$travel[1]</td>";
+        echo "<td>$travel[2]</td>";
+        echo "<td><a  href='index.php?controller=travel&action=getTravel&id=$travel[3]' class='button'>Show</a><a  href='index.php?controller=travel&action=deleteTravel&id=$travel[3]' class='button'>Delete</a></td>";
+        echo "</tr>";
+      }
     } else {
       error("A problem with database ocurred");
     }
