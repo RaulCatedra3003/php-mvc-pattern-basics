@@ -4,6 +4,7 @@
 //TODO: inside this file you need to define HOST(your database host), USER_NAME(database user name), PASSWORD(database password) and DB_NAME(database name).
 
 define("BASE_PATH", dirname(__FILE__));
+require_once "config/dbConstants.php";
 require_once "config/constants.php";
 require_once "helpers/helpers.php";
 
