@@ -24,7 +24,7 @@ function newTravel()
         $cities = getAllCities();
         require_once "./views/travel/travel.php";
         
-    } catch (\Throwable $th) {
+    } catch (Throwable $th) {
         error("A problem with database ocurred");
     }
 }
@@ -37,7 +37,7 @@ function getTravel($request)
             $employees = getAllEmployees();
             $cities = getAllCities();
             require_once VIEWS . "travel/travel.php";
-        } catch (\Throwable $th) {
+        } catch (Throwable $th) {
             error("A problem with database ocurred");
         }
     }

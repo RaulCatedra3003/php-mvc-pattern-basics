@@ -10,7 +10,7 @@ function get()
     global $dataBase;
     $response = mysqli_query($dataBase, 'SELECT * FROM employees');
     return mysqli_fetch_all($response);
-  } catch (\Throwable $th) {
+  } catch (Throwable $th) {
     return false;
   }
 }
@@ -21,7 +21,7 @@ function getById($id)
     global $dataBase;
     $response = mysqli_query($dataBase, "SELECT * FROM employees WHERE id = $id");
     return mysqli_fetch_array($response);
-  } catch (\Throwable $th) {
+  } catch (Throwable $th) {
     return false;
   }
 }
@@ -37,7 +37,7 @@ function newItem($request)
       mysqli_query($dataBase, "INSERT INTO employees (name, lastName, email, gender, age, streetAddress, city, state, PC, phoneNumber) VALUES ('$request[name]', '$request[lastName]', '$request[email]', '$request[gender]', '$request[age]', '$request[streetAddress]', '$request[city]', '$request[state]', '$request[PC]', '$request[phoneNumber]')"); 
       return "New employee created correctly"; 
     }
-  } catch (\Throwable $th) {
+  } catch (Throwable $th) {
     return false;
   }
 }
@@ -53,7 +53,7 @@ function updateById($request)
       mysqli_query($dataBase, "UPDATE employees SET name = '$request[name]', lastName = '$request[lastName]', email = '$request[email]', gender = '$request[gender]', age = '$request[age]', streetAddress = '$request[streetAddress]', city = '$request[city]', state = '$request[state]', PC = '$request[PC]', phoneNumber = '$request[phoneNumber]' WHERE id = '$request[id]'");
       return "Employee updated correctly"; 
     }
-  } catch (\Throwable $th) {
+  } catch (Throwable $th) {
     return false;
   }
 }
@@ -70,7 +70,7 @@ function deleteById($id)
       return "Employee deleted correctly";
       
     }
-  } catch (\Throwable $th) {
+  } catch (Throwable $th) {
     return false;
   }
 }
