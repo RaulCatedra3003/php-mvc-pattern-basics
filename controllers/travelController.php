@@ -7,6 +7,7 @@ if (isset($_REQUEST['action'])) {
 } else {
   error("there is not action defined");
 }
+
 function getAllTravels()
 {
   require_once MODELS . "travelModel.php";
@@ -16,6 +17,7 @@ function getAllTravels()
     error("A problem with database ocurred");
   }
 }
+
 function newTravel()
 {
   require_once MODELS . "travelModel.php";
@@ -27,6 +29,7 @@ function newTravel()
     error("A problem with database ocurred");
   }
 }
+
 function getTravel($request)
 {
   if (isset($request['id'])) {
@@ -41,28 +44,31 @@ function getTravel($request)
     }
   }
 }
+
 function createTravel($request)
 {
   if (isset($request['user_id'])) {
     require_once MODELS . "travelModel.php";
     if ($message = newItem($request)) {
       header("Location:index.php?controller=travel&action=getAllTravels&message=$message");
-    }else{
+    } else {
       error("A problem with database ocurred");
     }
   }
 }
+
 function deleteTravel($request)
 {
   require_once MODELS . "travelModel.php";
   if (isset($request['id'])) {
     if ($message = deleteById($request['id'])) {
       header("Location:index.php?controller=travel&action=getAllTravels&message=$message");
-    }else{
+    } else {
       error("A problem with database ocurred");
     }
   }
 }
+
 function updateTravel($request)
 {
   require_once MODELS . "travelModel.php";
@@ -76,6 +82,7 @@ function updateTravel($request)
     error("You need parameters to run this action");
   }
 }
+
 function getCityTravels($request)
 {
   require_once MODELS . "travelModel.php";

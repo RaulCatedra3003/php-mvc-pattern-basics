@@ -1,4 +1,5 @@
 <?php
+
 function error($error)
 {
   $errorMsg = $error;

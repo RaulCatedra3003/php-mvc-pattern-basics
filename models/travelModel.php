@@ -1,4 +1,5 @@
 <?php
+
 function get()
 {
   try {
@@ -9,6 +10,7 @@ function get()
     return false;
   }
 }
+
 function getById($id)
 {
   try {
@@ -19,6 +21,7 @@ function getById($id)
     return false;
   }
 }
+
 function getAllEmployees()
 {
   try {
@@ -29,6 +32,7 @@ function getAllEmployees()
     return false;
   }
 }
+
 function getAllCities()
 {
   try {
@@ -39,16 +43,18 @@ function getAllCities()
     return false;
   }
 }
+
 function newItem($request)
 {
   try {
     global $dataBase;
-    mysqli_query($dataBase, "INSERT INTO travels (user_id, city_id) VALUES ('$request[user_id]', '$request[city_id]')"); 
-    return "New travel created correctly"; 
+    mysqli_query($dataBase, "INSERT INTO travels (user_id, city_id) VALUES ('$request[user_id]', '$request[city_id]')");
+    return "New travel created correctly";
   } catch (Throwable $th) {
     return false;
   }
 }
+
 function deleteById($id)
 {
   try {
@@ -58,12 +64,13 @@ function deleteById($id)
       return "This travel does not exists";
     } else {
       mysqli_query($dataBase, "DELETE FROM travels WHERE id = $id");
-      return "Travel deleted correctly"; 
+      return "Travel deleted correctly";
     }
   } catch (Throwable $th) {
     return false;
   }
 }
+
 function updateTravelById($request)
 {
   try {
@@ -73,12 +80,13 @@ function updateTravelById($request)
       return "This travel does not exists";
     } else {
       mysqli_query($dataBase, "UPDATE travels SET user_id = '$request[user_id]' , city_id = '$request[city_id]' WHERE id = '$request[id]'");
-      return "Travel updated correctly"; 
+      return "Travel updated correctly";
     }
   } catch (Throwable $th) {
     return false;
   }
 }
+
 function getCityTravelsById($id)
 {
   try {

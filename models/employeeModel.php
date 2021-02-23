@@ -34,8 +34,8 @@ function newItem($request)
     if (mysqli_num_rows($newUser) > 0) {
       return "This employee already exists";
     } else {
-      mysqli_query($dataBase, "INSERT INTO employees (name, lastName, email, gender, age, streetAddress, city, state, PC, phoneNumber) VALUES ('$request[name]', '$request[lastName]', '$request[email]', '$request[gender]', '$request[age]', '$request[streetAddress]', '$request[city]', '$request[state]', '$request[PC]', '$request[phoneNumber]')"); 
-      return "New employee created correctly"; 
+      mysqli_query($dataBase, "INSERT INTO employees (name, lastName, email, gender, age, streetAddress, city, state, PC, phoneNumber) VALUES ('$request[name]', '$request[lastName]', '$request[email]', '$request[gender]', '$request[age]', '$request[streetAddress]', '$request[city]', '$request[state]', '$request[PC]', '$request[phoneNumber]')");
+      return "New employee created correctly";
     }
   } catch (Throwable $th) {
     return false;
@@ -51,7 +51,7 @@ function updateById($request)
       return "This employee does not exists";
     } else {
       mysqli_query($dataBase, "UPDATE employees SET name = '$request[name]', lastName = '$request[lastName]', email = '$request[email]', gender = '$request[gender]', age = '$request[age]', streetAddress = '$request[streetAddress]', city = '$request[city]', state = '$request[state]', PC = '$request[PC]', phoneNumber = '$request[phoneNumber]' WHERE id = '$request[id]'");
-      return "Employee updated correctly"; 
+      return "Employee updated correctly";
     }
   } catch (Throwable $th) {
     return false;
@@ -68,7 +68,6 @@ function deleteById($id)
     } else {
       mysqli_query($dataBase, "DELETE FROM employees WHERE id = $id");
       return "Employee deleted correctly";
-      
     }
   } catch (Throwable $th) {
     return false;
