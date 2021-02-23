@@ -3,7 +3,7 @@ function get()
 {
   try {
     global $dataBase;
-    $response = mysqli_query($dataBase, 'SELECT employees.name,employees.lastName,cities.name,travels.id FROM employees INNER JOIN travels ON employees.id = travels.user_id INNER JOIN cities ON travels.city_id = cities.id');
+    $response = mysqli_query($dataBase, 'SELECT employees.name,employees.lastName,cities.name,travels.id,cities.id FROM employees INNER JOIN travels ON employees.id = travels.user_id INNER JOIN cities ON travels.city_id = cities.id');
     return mysqli_fetch_all($response);
   } catch (Throwable $th) {
     return false;
@@ -75,6 +75,16 @@ function updateTravelById($request)
       mysqli_query($dataBase, "UPDATE travels SET user_id = '$request[user_id]' , city_id = '$request[city_id]' WHERE id = '$request[id]'");
       return "Travel updated correctly"; 
     }
+  } catch (Throwable $th) {
+    return false;
+  }
+}
+function getCityTravelsById($id)
+{
+  try {
+    global $dataBase;
+    $response = mysqli_query($dataBase, "SELECT employees.name,employees.lastName,cities.name FROM employees INNER JOIN travels ON employees.id = travels.user_id INNER JOIN cities ON travels.city_id = cities.id WHERE cities.id = $id");
+    return mysqli_fetch_all($response);
   } catch (Throwable $th) {
     return false;
   }

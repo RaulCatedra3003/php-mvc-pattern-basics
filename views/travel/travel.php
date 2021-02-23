@@ -14,7 +14,7 @@
     <input type="hidden" name="controller" value="travel">
     <input type="hidden" name="action" value="<?= isset($travel) ? 'updateTravel' : 'createTravel' ?>">
     <?= isset($travel) ? "<input type='hidden' name='id' value='$travel[id]'>" : '' ?>
-
+    <label for="user_id"> Employee: </label>
     <select name="user_id" id="user_id" required>
       <?php
       foreach ($employees as $employee) {
@@ -30,6 +30,7 @@
       }
       ?>
     </select>
+    <label for="city_id"> City: </label>
     <select name="city_id" id="city_id" required>
       <?php
       foreach ($cities as $city) {

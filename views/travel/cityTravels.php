@@ -10,7 +10,7 @@ if (isset($_REQUEST['message'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>City Travels</title>
   <script defer src="./assets/js/utils.js"></script>
 </head>
 
@@ -18,18 +18,17 @@ if (isset($_REQUEST['message'])) {
   <?= isset($message) ? "<p class='message'>$message</p>" : "" ?>
   <table class="table">
     <tr>
+      <th>City</th>
       <th>Name</th>
       <th>Last Name</th>
-      <th>City</th>
     </tr>
     <?php
-    if (isset($travels)) {
-      foreach ($travels as $travel) {
+    if (isset($cityTravels)) {
+      foreach ($cityTravels as $travel) {
         echo "<tr>";
+        echo "<td>$travel[2]</td>";
         echo "<td>$travel[0]</td>";
         echo "<td>$travel[1]</td>";
-        echo "<td><a href='index.php?controller=travel&action=getCityTravels&id=$travel[4]'>$travel[2]</a></td>";
-        echo "<td><a  href='index.php?controller=travel&action=getTravel&id=$travel[3]' class='button'>Show</a><a  href='index.php?controller=travel&action=deleteTravel&id=$travel[3]' class='button'>Delete</a></td>";
         echo "</tr>";
       }
     } else {
@@ -37,8 +36,7 @@ if (isset($_REQUEST['message'])) {
     }
     ?>
   </table>
-  <a href="index.php?controller=travel&action=newTravel">New Travel</a>
-  <a href="index.php">Back</a>
+  <a href="index.php?controller=travel&action=getAllTravels">Back</a>
 </body>
 
 </html>

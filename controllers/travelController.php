@@ -76,3 +76,16 @@ function updateTravel($request)
     error("You need parameters to run this action");
   }
 }
+function getCityTravels($request)
+{
+  require_once MODELS . "travelModel.php";
+  if (isset($request['id'])) {
+    if ($cityTravels = getCityTravelsById($request['id'])) {
+      require_once VIEWS . "travel/cityTravels.php";
+    } else {
+      error("A problem with database ocurred");
+    }
+  } else {
+    error("You need parameters to run this action");
+  }
+}
