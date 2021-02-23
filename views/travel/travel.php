@@ -28,9 +28,6 @@
           echo "<option value='$employee[0]'>$employee[1] $employee[2]</option>";
         }
       }
-      if (!isset($travel)) {
-        echo "<option value='default' selected disabled>Choose an Employee</option>";
-      }
       ?>
     </select>
     <select name="city_id" id="city_id" required>
@@ -45,9 +42,6 @@
         } else {
           echo "<option value='$city[0]'>$city[1] </option>";
         }
-      }
-      if (!isset($travel)) {
-        echo "<option value='default' selected disabled>Choose a City</option>";
       }
       ?>
     </select>
